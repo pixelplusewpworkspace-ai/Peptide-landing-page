@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AUTHLABS | Research Grade Peptides</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e1e3e4",
+              "on-primary-fixed": "#001b3f",
+              "on-secondary-fixed": "#001e2c",
+              "on-surface-variant": "#43474f",
+              "surface-dim": "#d9dadb",
+              "surface-tint": "#3e5e95",
+              "secondary-container": "#77cdfd",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary-fixed-variant": "#004c69",
+              "secondary-fixed": "#c4e7ff",
+              "on-tertiary-fixed": "#2f1500",
+              "error": "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#7796d1",
+              "tertiary-fixed": "#ffdcc3",
+              "outline-variant": "#c4c6d1",
+              "tertiary-container": "#4a2500",
+              "on-background": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "on-tertiary-container": "#e27c00",
+              "on-surface": "#191c1d",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#7cd0ff",
+              "on-primary-fixed-variant": "#24467c",
+              "surface": "#f8f9fa",
+              "primary-fixed-dim": "#abc7ff",
+              "tertiary-fixed-dim": "#ffb77d",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary": "#ffffff",
+              "surface-container": "#edeeef",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f3f4f5",
+              "primary": "#00193c",
+              "outline": "#747781",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#2e3132",
+              "inverse-primary": "#abc7ff",
+              "surface-bright": "#f8f9fa",
+              "tertiary": "#2c1300",
+              "primary-fixed": "#d7e2ff",
+              "on-tertiary-fixed-variant": "#6e3900",
+              "background": "#f8f9fa",
+              "secondary": "#00658b",
+              "primary-container": "#002d62",
+              "on-secondary-container": "#005777"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        @keyframes smooth-glow {
+            0% { transform: scale(0.94) rotate(0deg); opacity: 0.45; }
+            50% { transform: scale(1.06) rotate(180deg); opacity: 0.65; }
+            100% { transform: scale(0.94) rotate(360deg); opacity: 0.45; }
+        }
+        .animate-smooth-glow {
+            animation: smooth-glow 12s linear infinite;
+        }
+        @keyframes floating-tilt {
+            0% { transform: translateY(0px) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(9deg); }
+            100% { transform: translateY(0px) rotate(5deg); }
+        }
+        .animate-float-tilt {
+            animation: floating-tilt 6s ease-in-out infinite;
+        }
+        @keyframes shadow-breathe {
+            0% { transform: translateX(-50%) scaleX(0.85); opacity: 0.25; }
+            50% { transform: translateX(-50%) scaleX(1.05); opacity: 0.12; }
+            100% { transform: translateX(-50%) scaleX(0.85); opacity: 0.25; }
+        }
+        .animate-shadow-breathe {
+            animation: shadow-breathe 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Compliance Age Gate Overlay -->
+<div id="compliance-overlay" class="fixed inset-0 z-[100] flex items-center justify-center bg-primary/30 backdrop-blur-md transition-all duration-500">
+    <div class="bg-white dark:bg-slate-900 max-w-lg w-full mx-4 p-8 rounded-2xl shadow-2xl border border-white/20 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute -top-12 -right-12 w-40 h-40 bg-secondary/10 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-primary/5 rounded-full blur-2xl"></div>
+
+        <div class="relative text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 mb-6">
+                <span class="material-symbols-outlined text-secondary text-3xl" data-icon="lock">lock</span>
+            </div>
+            
+            <h2 class="font-headline font-extrabold text-2xl text-primary dark:text-white uppercase tracking-tight mb-4 leading-tight">
+                Research Compliance & Age Gate
+            </h2>
+            
+            <p class="text-sm text-slate-600 dark:text-slate-300 font-body leading-relaxed mb-6">
+                By entering this site, you certify that you are at least <span class="font-bold text-primary">21 years of age</span> and understand that all compounds are strictly for <span class="font-bold text-secondary">laboratory research use only</span>. They are not intended for human consumption.
+            </p>
+
+            <div class="space-y-3">
+                <button id="agree-btn" class="w-full bg-primary text-on-primary py-4 rounded-md font-headline font-bold tracking-widest text-xs uppercase shadow-lg hover:shadow-xl hover:bg-opacity-90 active:scale-95 transition-all focus:outline-none">
+                    I Agree & Verify
+                </button>
+                <button id="exit-btn" class="w-full bg-surface-container-high text-primary/80 py-3 rounded-md font-headline font-bold tracking-widest text-xs uppercase hover:bg-surface-container-highest transition-all focus:outline-none">
+                    Exit
+                </button>
+            </div>
+            
+            <p class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">
+                FDA Disclaimer applies to all materials.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_4px_40px_0_rgba(0,25,60,0.04)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white uppercase font-headline">AUTHLABS</div>
+<div class="hidden md:flex space-x-12">
+<a class="text-blue-900 dark:text-blue-100 border-b-2 border-blue-600 font-headline uppercase tracking-widest text-sm py-1 transition-all" href="#">Science</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-headline uppercase tracking-widest text-sm py-1 transition-colors duration-300" href="#">Products</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-headline uppercase tracking-widest text-sm py-1 transition-colors duration-300" href="#">Quality</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-headline uppercase tracking-widest text-sm py-1 transition-colors duration-300" href="#">Compliance</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-slate-500 hover:text-blue-900 transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="hidden sm:inline-block bg-primary text-on-primary px-6 py-2 rounded-md font-headline uppercase tracking-widest text-xs font-bold hover:opacity-90 active:scale-95 transition-all">
+                    Shop Now
+                </button>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-open" class="md:hidden text-slate-500 hover:text-blue-900 transition-colors focus:outline-none">
+    <span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+
+<!-- Mobile Scroll Drawer Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 md:hidden">
+    <div class="absolute right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white dark:bg-slate-900 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300" id="mobile-menu-drawer">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <div class="font-headline font-black text-lg text-primary uppercase">Menu</div>
+            <button id="mobile-menu-close" class="text-slate-500 hover:text-blue-900 transition-colors focus:outline-none">
+                <span class="material-symbols-outlined" data-icon="close">close</span>
+            </button>
+        </div>
+        <div class="flex-1 flex flex-col p-8 space-y-6">
+            <a class="font-headline font-bold text-lg text-primary uppercase border-b border-slate-50 pb-2" href="#">Science</a>
+            <a class="font-headline font-bold text-lg text-primary uppercase border-b border-slate-50 pb-2" href="#">Products</a>
+            <a class="font-headline font-bold text-lg text-primary uppercase border-b border-slate-50 pb-2" href="#">Quality</a>
+            <a class="font-headline font-bold text-lg text-primary uppercase border-b border-slate-50 pb-2" href="#">Compliance</a>
+            
+            <button class="mt-4 w-full bg-primary text-on-primary py-4 rounded-md font-headline font-bold tracking-widest text-xs uppercase shadow-md">
+                Shop Now
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 w-full editorial-grid gap-8 items-center">
+<div class="col-span-12 lg:col-span-7">
+        <!-- Social Proof (Avatars & Stars) -->
+        <div class="flex items-center space-x-4 mb-5">
+            <div class="flex -space-x-1.5">
+                <img class="w-6 h-6 rounded-full border-2 border-surface object-cover shadow-sm" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Scientist"/>
+                <img class="w-6 h-6 rounded-full border-2 border-surface object-cover shadow-sm" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Doctor"/>
+                <img class="w-6 h-6 rounded-full border-2 border-surface object-cover shadow-sm" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Researcher"/>
+            </div>
+            <div class="flex items-center space-x-0.5">
+                <span class="material-symbols-outlined text-[13px] text-amber-400" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-[13px] text-amber-400" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-[13px] text-amber-400" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-[13px] text-amber-400" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-[13px] text-amber-400" data-icon="star">star</span>
+                <span class="font-headline font-bold text-[11px] text-primary ml-1.5">4.8/5.0</span>
+                <span class="text-[10px] text-slate-400 font-headline font-bold tracking-wider ml-1 uppercase">(2.4k+ Citations)</span>
+            </div>
+        </div>
+
+<!-- Trust Badges Bar -->
+<div class="flex flex-wrap items-center gap-4 mb-10">
+    <div class="inline-flex items-center space-x-2 bg-secondary/5 border border-secondary/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+        <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="w-4 h-auto rounded-sm shadow-sm opacity-80"/>
+        <span class="font-headline font-bold text-[10px] uppercase tracking-wider text-slate-600">Formulated in USA</span>
+    </div>
+    <div class="inline-flex items-center space-x-2 bg-green-500/5 border border-green-500/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+        <span class="material-symbols-outlined text-sm text-green-600" data-icon="verified">verified</span>
+        <span class="font-headline font-bold text-[10px] uppercase tracking-wider text-green-700">99.8% Certified Purity</span>
+    </div>
+    <div class="inline-flex items-center space-x-2 bg-primary/5 border border-primary/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+        <span class="material-symbols-outlined text-sm text-primary" data-icon="biotech">biotech</span>
+        <span class="font-headline font-bold text-[10px] uppercase tracking-wider text-slate-600">3rd Party Lab Tested</span>
+    </div>
+</div>
+
+<h1 class="font-headline font-extrabold text-3xl md:text-5xl leading-[1.2] tracking-tight text-primary uppercase mb-6">
+                    RESEARCH GRADE PEPTIDES FOR SCIENTIFIC EXCELLENCE
+                </h1>
+<p class="mt-6 text-sm text-on-surface-variant max-w-xl font-body leading-relaxed">
+                    AuthLabs provides industry-leading analytical purity for high-precision biochemical research. Our compounds set the benchmark for global laboratory standards.
+                </p>
+<div class="mt-12 flex items-center space-x-8">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-md font-headline font-bold tracking-widest text-sm uppercase shadow-xl hover:shadow-2xl transition-all">
+                        View Catalog
+                    </button>
+<button class="text-primary font-headline font-bold tracking-widest text-sm uppercase border-b-2 border-primary/20 hover:border-primary transition-all pb-1">
+                        Methodology
+                    </button>
+</div>
+<p class="mt-10 text-[10px] uppercase font-headline font-bold tracking-widest text-slate-400/80">
+    * Strictly For Laboratory Research Use Only
+</p>
+</div>
+<div class="col-span-12 lg:col-span-5 relative mt-12 lg:mt-0 flex items-center justify-center">
+    <!-- Stronger Smooth Animated Glow Effect Behind -->
+    <div class="absolute inset-0 m-auto w-80 h-80 bg-gradient-to-r from-secondary/60 via-cyan-300/40 to-blue-500/30 rounded-full blur-3xl opacity-80 animate-smooth-glow"></div>
+    <div class="absolute inset-0 m-auto w-64 h-64 bg-secondary/30 rounded-full blur-2xl opacity-60"></div>
+
+    <!-- Floor Shadow for Placed look -->
+    <div class="absolute bottom-4 left-1/2 w-4/5 h-6 bg-slate-900/10 rounded-[100%] blur-md animate-shadow-breathe"></div>
+    <div class="absolute bottom-4 left-1/2 w-2/3 h-4 bg-slate-900/15 rounded-[100%] blur-sm animate-shadow-breathe"></div>
+
+    <!-- Floating Tilted Product Vials Mockup -->
+    <img alt="AUTHLABS Research Vials Collection" class="relative z-10 w-full max-w-sm h-auto object-contain animate-float-tilt" src="./hero-removebg-preview.png"/>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="bg-surface-container-low py-12">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center gap-8 md:gap-4 opacity-80">
+<div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="verified">verified</span>
+<span class="font-headline font-bold text-xs tracking-[0.2em] text-primary uppercase">99%+ Purity Verified</span>
+</div>
+<div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="biotech">biotech</span>
+<span class="font-headline font-bold text-xs tracking-[0.2em] text-primary uppercase">Third-Party Tested</span>
+</div>
+<div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-headline font-bold text-xs tracking-[0.2em] text-primary uppercase">ISO 9001 Certified</span>
+</div>
+<div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="gavel">gavel</span>
+<span class="font-headline font-bold text-xs tracking-[0.2em] text-primary uppercase">GMP Compliant</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid (Moved Up) -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-center mb-16">
+<h2 class="font-headline text-2xl font-extrabold text-primary uppercase tracking-tight border-b border-primary/10 pb-2">Research Catalog</h2>
+<div class="flex items-center space-x-4">
+<span class="text-sm font-label text-on-surface-variant uppercase tracking-widest">Filter by category</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="filter_list">filter_list</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- BPC-157 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group shadow-sm border border-surface-container">
+<div class="h-64 bg-slate-100 relative overflow-hidden">
+<img alt="BPC-157" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Macro photography of a clear glass research vial with a professional blue and white label in a sterile laboratory setting" src="./bpc_157_mockup.png"/>
+<div class="absolute top-4 right-4 bg-primary text-white text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest rounded-full">In Stock</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline font-extrabold text-lg text-primary tracking-tight">BPC-157</h3>
+<span class="text-secondary font-headline font-bold">5mg</span>
+</div>
+<div class="space-y-3 mb-8 text-xs font-label uppercase tracking-wider text-slate-500">
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Purity</span>
+<span class="text-on-surface font-bold">99.4%</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Mol. Weight</span>
+<span class="text-on-surface font-bold">1419.5 Da</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Solubility</span>
+<span class="text-on-surface font-bold">Aqueous</span>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-surface-container-highest text-primary font-headline font-bold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- TB-500 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group shadow-sm border border-surface-container">
+<div class="h-64 bg-slate-100 relative overflow-hidden">
+<img alt="TB-500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Multiple research vials lined up in a sterile grid pattern on a white clinical surface with cold cyan shadows" src="./tb_500_mockup.png"/>
+<div class="absolute top-4 right-4 bg-primary text-white text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest rounded-full">In Stock</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline font-extrabold text-lg text-primary tracking-tight">TB-500</h3>
+<span class="text-secondary font-headline font-bold">2mg</span>
+</div>
+<div class="space-y-3 mb-8 text-xs font-label uppercase tracking-wider text-slate-500">
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Purity</span>
+<span class="text-on-surface font-bold">99.1%</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Mol. Weight</span>
+<span class="text-on-surface font-bold">4963.5 Da</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Form</span>
+<span class="text-on-surface font-bold">Lyophilized</span>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-surface-container-highest text-primary font-headline font-bold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Semaglutide -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group shadow-sm border border-surface-container">
+<div class="h-64 bg-slate-100 relative overflow-hidden">
+<img alt="Semaglutide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Macro shot of a laboratory pipette dispensing a drop of clear liquid into a test tube with shallow depth of field" src="./semaglutide_mockup.png"/>
+<div class="absolute top-4 right-4 bg-secondary text-white text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest rounded-full">Popular</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline font-extrabold text-lg text-primary tracking-tight">SEMAGLUTIDE</h3>
+<span class="text-secondary font-headline font-bold">5mg</span>
+</div>
+<div class="space-y-3 mb-8 text-xs font-label uppercase tracking-wider text-slate-500">
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Purity</span>
+<span class="text-on-surface font-bold">99.8%</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Structure</span>
+<span class="text-on-surface font-bold">GLP-1 Analog</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-2">
+<span>Cas No.</span>
+<span class="text-on-surface font-bold">910463-68-2</span>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-surface-container-highest text-primary font-headline font-bold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-primary hover:text-white transition-colors">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative grid grid-cols-12 gap-3">
+    <!-- Main Image (Bento Card Large) -->
+    <div class="col-span-12 sm:col-span-8 bg-surface-container-low p-1.5 rounded-2xl shadow-sm border border-surface-container hover:shadow-md transition-shadow duration-300">
+        <img alt="Laboratory Excellence" class="w-full h-44 object-cover rounded-xl" src="./lab_excellence.png"/>
+    </div>
+
+    <!-- Stat 1 (Bento Card Small) -->
+    <div class="col-span-6 sm:col-span-4 bg-white dark:bg-slate-900 px-4 py-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center gap-1 hover:shadow-md transition-shadow">
+        <span class="font-headline font-black text-2xl text-primary">99.8%</span>
+        <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Purity Verification</span>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="col-span-6 sm:col-span-4 bg-white px-4 py-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center gap-1 hover:shadow-md transition-shadow">
+        <span class="font-headline font-black text-2xl text-secondary">10k+</span>
+        <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">vials Tested</span>
+    </div>
+
+    <!-- Icon Card 1 -->
+    <div class="col-span-12 sm:col-span-4 bg-white px-4 py-5 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-2.5 hover:shadow-md transition-shadow">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-secondary/10">
+            <span class="material-symbols-outlined text-secondary text-sm" data-icon="policy">policy</span>
+        </div>
+        <div>
+            <span class="font-headline font-bold text-[11px] text-primary uppercase leading-none block">ISO 9001</span>
+            <span class="text-[8px] text-slate-400 font-body block mt-0.5">Facility Standard</span>
+        </div>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="col-span-6 sm:col-span-4 bg-white px-4 py-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center gap-1 hover:shadow-md transition-shadow">
+        <span class="font-headline font-black text-2xl text-primary">24/7</span>
+        <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Live Support</span>
+    </div>
+
+    <!-- Icon Card 2 -->
+    <div class="col-span-12 bg-white px-4 py-4 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-3 hover:shadow-md transition-shadow">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10">
+            <span class="material-symbols-outlined text-green-600 text-sm" data-icon="lock">lock</span>
+        </div>
+        <div>
+            <span class="font-headline font-bold text-[12px] text-primary uppercase">Secure Cold-Chain Dispatch</span>
+            <p class="text-[9px] text-slate-400 mt-0.5 leading-tight">Every delivery is temperature-controlled to ensure full structure integrity.</p>
+        </div>
+    </div>
+</div>
+<div>
+<span class="font-headline font-bold text-secondary text-xs tracking-[0.3em] uppercase block mb-6">Our Commitment</span>
+<h2 class="font-headline text-2xl font-extrabold text-primary mb-6 leading-tight uppercase">Elevating Research Through Clinical Integrity</h2>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
+                    AuthLabs was founded on the principle that scientific progress is only as reliable as its reagents. We provide researchers with molecular tools that surpass standard commercial purity thresholds.
+                </p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                    Our facilities utilize advanced lyophilization techniques and triple-redundant validation protocols to ensure that every sequence delivered is structurally identical to its biological blueprint.
+                </p>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-headline text-2xl font-extrabold text-primary uppercase tracking-tight">The AuthLabs Advantage</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="bg-surface-container-lowest p-10 rounded-lg shadow-sm hover:shadow-md transition-shadow group border border-surface-container">
+<div class="w-16 h-16 bg-surface-container-low rounded-md flex items-center justify-center mb-8 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white" data-icon="analytics">analytics</span>
+</div>
+<h3 class="font-headline font-bold text-base text-primary mb-4 uppercase">Precision Analytics</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                        Full spectrum HPLC and LC-MS analysis provided for every batch. We don't just claim purity; we prove it with transparent data.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg shadow-sm hover:shadow-md transition-shadow group border border-surface-container">
+<div class="w-16 h-16 bg-surface-container-low rounded-md flex items-center justify-center mb-8 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white" data-icon="public">public</span>
+</div>
+<h3 class="font-headline font-bold text-base text-primary mb-4 uppercase">Rapid Global Logistics</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                        Cold-chain optimization and expedited worldwide shipping ensure your research never stalls due to supply chain friction.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-lg shadow-sm hover:shadow-md transition-shadow group border border-surface-container">
+<div class="w-16 h-16 bg-surface-container-low rounded-md flex items-center justify-center mb-8 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white" data-icon="policy">policy</span>
+</div>
+<h3 class="font-headline font-bold text-base text-primary mb-4 uppercase">Regulatory Transparency</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                        Complete documentation for institutional compliance. We strictly adhere to all legal frameworks for research-only procurement.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Synthesis Process -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-2xl font-extrabold text-primary uppercase mb-6">Synthesis &amp; Verification Lifecycle</h2>
+<p class="text-on-surface-variant font-body">Our rigorous 5-stage protocol ensures molecular integrity from initial sequence design to final cold-chain dispatch.</p>
+</div>
+<div class="flex space-x-2">
+<div class="w-12 h-1 bg-secondary"></div>
+<div class="w-12 h-1 bg-outline-variant"></div>
+<div class="w-12 h-1 bg-outline-variant"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="relative p-8 border-l-2 border-secondary/20 bg-surface-container-lowest shadow-sm">
+<span class="text-6xl font-headline font-black text-secondary/10 absolute top-4 right-4">01</span>
+<h4 class="font-headline font-bold text-primary mb-4 uppercase">Automated Synthesis</h4>
+<p class="text-sm text-on-surface-variant">Using solid-phase peptide synthesis (SPPS) with high-efficiency coupling agents.</p>
+</div>
+<div class="relative p-8 border-l-2 border-secondary bg-surface-container-lowest shadow-sm">
+<span class="text-6xl font-headline font-black text-secondary/10 absolute top-4 right-4">02</span>
+<h4 class="font-headline font-bold text-primary mb-4 uppercase">Purification</h4>
+<p class="text-sm text-on-surface-variant">Preparative HPLC removes truncated sequences and synthesis byproducts.</p>
+</div>
+<div class="relative p-8 border-l-2 border-secondary/20 bg-surface-container-lowest shadow-sm">
+<span class="text-6xl font-headline font-black text-secondary/10 absolute top-4 right-4">03</span>
+<h4 class="font-headline font-bold text-primary mb-4 uppercase">Lyophilization</h4>
+<p class="text-sm text-on-surface-variant">Controlled freeze-drying ensures long-term stability and precise milligram dosing.</p>
+</div>
+<div class="relative p-8 border-l-2 border-secondary/20 bg-surface-container-lowest shadow-sm">
+<span class="text-6xl font-headline font-black text-secondary/10 absolute top-4 right-4">04</span>
+<h4 class="font-headline font-bold text-primary mb-4 uppercase">Final Verification</h4>
+<p class="text-sm text-on-surface-variant">Third-party mass spectrometry confirms exact molecular weight matches.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Analytical Quality -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-2xl font-extrabold text-primary uppercase mb-6 leading-tight">Analytical Quality Assurance</h2>
+<p class="text-on-surface-variant font-body mb-8">Every vial produced by AuthLabs is accompanied by a downloadable High-Performance Liquid Chromatography (HPLC) report and Mass Spectrometry (MS) analysis confirming exact identity and purity.</p>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
+<div>
+<h4 class="font-headline font-bold text-primary uppercase text-sm">COA Verification</h4>
+<p class="text-xs text-on-surface-variant">Instant access to Certificates of Analysis via batch-specific QR codes.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-secondary" data-icon="troubleshoot">troubleshoot</span>
+<div>
+<h4 class="font-headline font-bold text-primary uppercase text-sm">Impurity Profiling</h4>
+<p class="text-xs text-on-surface-variant">Detection of trace organic impurities down to 0.01% thresholds.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-lg">
+<div class="bg-white p-6 shadow-xl rounded border border-slate-100 overflow-hidden">
+<div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+<span class="font-headline font-bold text-xs text-slate-400 uppercase tracking-widest">HPLC Report Preview: BPC-157</span>
+<span class="text-[10px] text-green-600 font-bold px-2 py-0.5 bg-green-50 rounded">PASS</span>
+</div>
+<img alt="HPLC Report" class="w-full grayscale opacity-80" data-alt="Digital scientific data visualization showing a clear HPLC peak chromatogram with precise grid lines and technical data points" src="./hplc_report.png"/>
+<div class="mt-6 pt-6 border-t border-slate-100 flex justify-end">
+<button class="flex items-center space-x-2 text-secondary font-headline font-bold text-xs uppercase tracking-widest">
+<span>Download Full COA</span>
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regulatory Compliance -->
+<section class="py-24 bg-primary text-white">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<h2 class="font-headline text-xl font-extrabold uppercase mb-6 tracking-widest text-secondary">Regulatory Compliance &amp; Safeguards</h2>
+<div class="max-w-3xl mx-auto space-y-6">
+<p class="text-on-primary-container font-body leading-relaxed text-sm">
+                    AuthLabs products are intended strictly for LABORATORY RESEARCH PURPOSES ONLY. They are NOT for human consumption, medical, therapeutic, or diagnostic use. Any procurement must be accompanied by an acknowledgment of research intent.
+                </p>
+<div class="h-px w-24 bg-secondary mx-auto"></div>
+<p class="text-[10px] uppercase tracking-[0.2em] opacity-60">
+                    FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.
+                </p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-20 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="font-manrope font-black text-xl uppercase text-blue-950 dark:text-white">AUTHLABS</div>
+<p class="text-slate-500 font-plus-jakarta text-sm leading-relaxed">
+                    Advancing scientific research through unprecedented molecular purity and analytical transparency.
+                </p>
+<div class="flex space-x-4 opacity-40">
+<span class="material-symbols-outlined" data-icon="lab_panel">lab_panel</span>
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary dark:text-white uppercase text-xs tracking-[0.2em] mb-8">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta" href="#">Science</a></li>
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta" href="#">Products</a></li>
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta" href="#">Quality Control</a></li>
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary dark:text-white uppercase text-xs tracking-[0.2em] mb-8">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta underline decoration-blue-500/30 underline-offset-4" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta underline decoration-blue-500/30 underline-offset-4" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta underline decoration-blue-500/30 underline-offset-4" href="#">Refunds</a></li>
+<li><a class="text-slate-500 hover:text-blue-900 transition-transform hover:translate-x-1 inline-block text-sm font-plus-jakarta underline decoration-blue-500/30 underline-offset-4" href="#">FDA Disclaimer</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary dark:text-white uppercase text-xs tracking-[0.2em] mb-8">Secure Payments</h4>
+<div class="flex flex-wrap gap-4 grayscale opacity-60">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+<span class="material-symbols-outlined" data-icon="currency_bitcoin">currency_bitcoin</span>
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<p class="mt-8 text-[10px] text-slate-400 font-plus-jakarta leading-relaxed">
+                    © 2024 AUTHLABS. FOR RESEARCH PURPOSES ONLY. NOT FOR HUMAN CONSUMPTION.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById('compliance-overlay');
+        const agreeBtn = document.getElementById('agree-btn');
+        const exitBtn = document.getElementById('exit-btn');
+
+        // Check verification status
+        if (localStorage.getItem('authlabs_verified') === 'true') {
+            if (overlay) overlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        } else {
+            if (overlay) overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        if (agreeBtn && overlay) {
+            agreeBtn.addEventListener('click', function() {
+                localStorage.setItem('authlabs_verified', 'true');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }, 500);
+            });
+        }
+
+        if (exitBtn) {
+            exitBtn.addEventListener('click', function() {
+                window.location.href = 'https://www.google.com';
+            });
+        }
+
+        // --- Added: Mobile Menu Logic ---
+        const menuBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuDrawer = document.getElementById('mobile-menu-drawer');
+
+        function openMenu() {
+            if (!mobileMenu || !menuDrawer) return;
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            // small delay to trigger transition
+            setTimeout(() => {
+                menuDrawer.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            if (!mobileMenu || !menuDrawer) return;
+            menuDrawer.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                // restore scroll only if age gate is verifyed
+                if (localStorage.getItem('authlabs_verified') === 'true') {
+                    document.body.style.overflow = 'auto';
+                }
+            }, 300);
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) closeMenu();
+            });
+        }
+    });
+</script>
+</body></html>
